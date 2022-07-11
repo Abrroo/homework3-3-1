@@ -53,12 +53,12 @@ int main()
         {
             std::cout << "Введите num1: ";
             std::cin >> num1;
-        } while (result.set_num1(num1));
+        } while (!result.set_num1(num1));
         do
         {
             std::cout << "Введите num2: ";
             std::cin >> num2;
-        } while (result.set_num2(num2));
+        } while (!result.set_num2(num2));
 
         std::cout << result.double_add(num1, num2) << std::endl;
         std::cout << result.multiply(num1, num2) << std::endl;
