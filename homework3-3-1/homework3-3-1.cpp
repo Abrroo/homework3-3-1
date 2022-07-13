@@ -3,10 +3,10 @@
 
 class Calculator
 {
-public:
+private:
     double num1;
     double num2;
-
+public:
     double double_add(double num1, double num2)     { return num1 + num2; }
     double multiply(double num1, double num2)       { return num1 * num2; }
     double subtract_1_2(double num1, double num2)   { return num2 - num1; }
@@ -23,7 +23,6 @@ public:
         }
         else
         {
-            std::cout << "Неверный ввод!" << std::endl;
             return false;
         }
     }
@@ -36,7 +35,6 @@ public:
         }
         else
         {
-            std::cout << "Неверный ввод!" << std::endl;
             return false;
         }
     }
@@ -53,11 +51,13 @@ int main()
         {
             std::cout << "Введите num1: ";
             std::cin >> num1;
+            if(!result.set_num1(num1)) { std::cout << "Неверный ввод!" << std::endl; }
         } while (!result.set_num1(num1));
         do
         {
             std::cout << "Введите num2: ";
             std::cin >> num2;
+            if (!result.set_num2(num2)) { std::cout << "Неверный ввод!" << std::endl; }
         } while (!result.set_num2(num2));
 
         std::cout << result.double_add(num1, num2) << std::endl;
