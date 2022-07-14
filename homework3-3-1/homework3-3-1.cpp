@@ -46,19 +46,22 @@ int main()
     while (1)
     {
         double num1 = 0, num2 = 0;
+        bool b_num1 = 0, b_num2 = 0;
         Calculator result{};
         do
         {
             std::cout << "Введите num1: ";
             std::cin >> num1;
-            if(!result.set_num1(num1)) { std::cout << "Неверный ввод!" << std::endl; }
-        } while (!result.set_num1(num1));
+            b_num1 = result.set_num1(num1);
+            if(!b_num1) { std::cout << "Неверный ввод!" << std::endl; }
+        } while (!b_num1);
         do
         {
             std::cout << "Введите num2: ";
             std::cin >> num2;
-            if (!result.set_num2(num2)) { std::cout << "Неверный ввод!" << std::endl; }
-        } while (!result.set_num2(num2));
+            b_num2 = result.set_num2(num2);
+            if (!b_num2) { std::cout << "Неверный ввод!" << std::endl; }
+        } while (!b_num2);
 
         std::cout << result.double_add(num1, num2) << std::endl;
         std::cout << result.multiply(num1, num2) << std::endl;
